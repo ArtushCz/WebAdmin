@@ -19,6 +19,6 @@ class HomePageController
      */
     public function homepage()
     {
-        return new Response('Kokot');
+        return new Response('Test');
     }
 }
