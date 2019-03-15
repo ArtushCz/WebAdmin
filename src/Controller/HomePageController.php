@@ -9,16 +9,28 @@
 namespace App\Controller;
 
 
+use App\Service\GlobalParams;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class HomePageController
 {
+    private $srv;
+
+    /**
+     * HomepageController constructor. -- konstruktor
+     * @param GlobalParams $myService -- Vlastni serice
+     */
+    public function __construct(GlobalParams $myService)
+    {
+        $this->srv = $myService;
+    }
+
     /**
      * @Route("/")
      */
     public function homepage()
     {
-        return new Response('Test');
+        return new Response($this->srv->getInfo());
     }
 }
