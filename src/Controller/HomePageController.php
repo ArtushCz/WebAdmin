@@ -31,13 +31,9 @@ class HomePageController
      */
     public function homepage()
     {
-        return new Response($this->srv->getInfo());
+        return $this->render('administration/base.html.twig', [
+            'message' => 'Welcome to your new controller!'
+        ]);
     }
-    /**
-     * @Route("/xx")
-     */
-    public function homxxepage()
-    {
-        return new Response($this->srv->getInfo());
-    }
+
 }

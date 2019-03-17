@@ -26,3 +26,16 @@ php bin/console list make
  php bin/console make:user                   Creates a new security user class
  php bin/console make:validator              Creates a new validator and constraint class
  php bin/console make:voter                  Creates a new security voter class
+
+
+--Apache settings : httpd-vhosts.conf
+<VirtualHost *:80>
+    DocumentRoot E:/xampp/htdocs/WebAdmin/public -- cesta ke slozce public
+    <Directory E:/xampp/htdocs/WebAdmin/public>
+        AllowOverride All
+        Order Allow,Deny
+        Allow from all
+
+	FallbackResource /index.php
+    </Directory>
+</VirtualHost>

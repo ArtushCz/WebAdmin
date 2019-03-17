@@ -12,9 +12,8 @@ class AdminHomepageController extends AbstractController
      */
     public function index()
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/Administration/AdminHomepageController.php',
+        return $this->render('administration/base.html.twig', [
+            'message' => 'Welcome to your new controller!'
         ]);
     }
 }
