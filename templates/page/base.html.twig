@@ -2,10 +2,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Page - {% block title %}{% endblock %}</title>
+    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    {% block configCss %}
+        {# csska #}
+    {% endblock %}
 </head>
 <body>
 <div id="content">
     {% block body %}{% endblock %}
 </div>
+<script>
+    function alertBtn(id){
+        $("#"+id).slideUp(200);
+    }
+</script>
+{% block configJs %} {% endblock %}
+
 </body>
 </html>

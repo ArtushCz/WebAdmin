@@ -12,7 +12,12 @@ class AdminHomepageController extends AbstractController
      */
     public function index()
     {
-        return $this->render('administration/base.html.twig', [
+        $this->addFlash("success", "This is a success message");
+        $this->addFlash("warning", "This is a warning message");
+        $this->addFlash("error", "This is an error message");
+        $this->addFlash("info", "This is an notice message");
+
+        return $this->render('administration/index.html.twig', [
             'message' => 'Welcome to your new controller!'
         ]);
     }

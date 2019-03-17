@@ -1,0 +1,64 @@
+{% block configCss %}
+    {# csska #}
+    <link rel="stylesheet" href=" {{ asset('css/alert.css') }}">
+
+{% endblock %}
+<div class="alert-box">
+    {% set messageCounter = 0 %}
+    {% for message in app.flashes('info') %}
+        {% set messageCounter = messageCounter + 1 %}
+        <div id="{{ messageCounter }}" class="alert alert-info">
+            <div class="row">
+                <div class="col-sm-11">
+                    {{ message }}
+                </div>
+                <div class="col-sm-1" style="top: 3px; right: 15px;">
+                    <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
+                                class="fa fa-remove"></span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        {% set messageCounter = messageCounter + 1 %}
+        <div id="{{ messageCounter }}" class="alert alert-warning">
+            <div class="row">
+                <div class="col-sm-11">
+                    {{ message }}
+                </div>
+                <div class="col-sm-1" style="top: 3px; right: 15px;">
+                    <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
+                                class="fa fa-remove"></span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        {% set messageCounter = messageCounter + 1 %}
+        <div id="{{ messageCounter }}" class="alert alert-danger">
+            <div class="row">
+                <div class="col-sm-11">
+                    {{ message }}
+                </div>
+                <div class="col-sm-1" style="top: 3px; right: 15px;">
+                    <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
+                                class="fa fa-remove"></span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('success') %}
+        {% set messageCounter = messageCounter + 1 %}
+        <div id="{{ messageCounter }}" class="alert alert-success">
+            <div class="row">
+                <div class="col-sm-11">
+                    {{ message }}
+                </div>
+                <div class="col-sm-1" style="top: 3px; right: 15px;">
+                    <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
+                                class="fa fa-remove"></span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -10,10 +10,10 @@ namespace App\Controller;
 
 
 use App\Service\GlobalParams;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
-class HomePageController
+class HomePageController extends AbstractController
 {
     private $srv;
 
@@ -31,7 +31,7 @@ class HomePageController
      */
     public function homepage()
     {
-        return $this->render('administration/base.html.twig', [
+        return $this->render('page/index.html.twig', [
             'message' => 'Welcome to your new controller!'
         ]);
     }
