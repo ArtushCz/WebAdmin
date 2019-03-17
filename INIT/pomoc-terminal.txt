@@ -1,0 +1,28 @@
+--dotahnuti entit z DB
+php bin/console doctrine:mapping:import "App\Entity" annotation --path=src/Entity
+php bin/console make:entity --regenerate App
+
+
+
+php bin/console list make
+
+--vytvoreni controlleru
+
+ php bin/console make:auth                   Creates a Guard authenticator of different flavors
+ php bin/console make:command                Creates a new console command class
+ php bin/console make:controller             Creates a new controller class
+ php bin/console make:crud                   Creates CRUD for Doctrine entity class
+ php bin/console make:entity                 Creates or updates a Doctrine entity class, and optionally an API Platform resource
+ php bin/console make:fixtures               Creates a new class to load Doctrine fixtures
+ php bin/console make:form                   Creates a new form class
+ php bin/console make:functional-test        Creates a new functional test class
+ php bin/console make:migration              Creates a new migration based on database changes
+ php bin/console make:registration-form      Creates a new registration form system
+ php bin/console make:serializer:encoder     Creates a new serializer encoder class
+ php bin/console make:serializer:normalizer  Creates a new serializer normalizer class
+ php bin/console make:subscriber             Creates a new event subscriber class
+ php bin/console make:twig-extension         Creates a new Twig extension class
+ php bin/console make:unit-test              Creates a new unit test class
+ php bin/console make:user                   Creates a new security user class
+ php bin/console make:validator              Creates a new validator and constraint class
+ php bin/console make:voter                  Creates a new security voter class

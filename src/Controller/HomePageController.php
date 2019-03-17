@@ -33,4 +33,11 @@ class HomePageController
     {
         return new Response($this->srv->getInfo());
     }
+    /**
+     * @Route("/xx")
+     */
+    public function homxxepage()
+    {
+        return new Response($this->srv->getInfo());
+    }
 }
