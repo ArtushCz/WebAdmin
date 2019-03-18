@@ -3,6 +3,7 @@
     <link rel="stylesheet" href=" {{ asset('css/alert.css') }}">
 
 {% endblock %}
+
 <div class="alert-box">
     {% set messageCounter = 0 %}
     {% for message in app.flashes('info') %}
@@ -62,9 +63,34 @@
         </div>
     {% endfor %}
 </div>
+{% if messageCounter > 0  %}
+<div class="alert-window">
+    <div class="alert-window-btn">
+        <a href="#" class="alert-btn" onclick="showAlerts()"><span
+                    class="fa fa-exclamation-triangle"></span></a>
+        <div class="alert-window-notify">
+            {{ messageCounter }}
+        </div>
+    </div>
+
+</div>
+{% endif %}
 
 <script>
     function alertBtn(id){
         $("#"+id).slideUp(200);
     }
+
+    function showAlerts(){
+        $('.alert').slideToggle(150);
+
+    }
+
+    /* ukonceni zobrazeni po 7s */
+    setTimeout(alertShutDown, 1500)
+    function alertShutDown() {
+        {}
+        $('.alert').delay(1500).fadeOut(100);
+    }
+
 </script>
