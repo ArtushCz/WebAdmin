@@ -5,6 +5,7 @@ namespace App\Controller\Administration;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,8 +32,16 @@ class RegistrationController extends AbstractController
             );
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+
+            try{
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $this->addFlash("success", "Registrace uživatele '".$user->getULogin()."' se povedla.");
+            }catch (Exception $e){
+                $this->addFlash("error", "Registrace uživatele '".$user->getULogin()."' se nezdařila. Chyba: ".$e);
+            }
+
+
 
             return $this->redirectToRoute('admin');
         }
