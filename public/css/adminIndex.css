@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+}
+.adminMenu{
+    background-color: #313131 ;
+    color: #DDDDDD;
+    height: 100%;
+}
+
+.contentPackage{
+    margin: 0px  !important;
+    padding: 0px !important;
+}
+
+.contentMenu{
+    height: 50px;
+    padding: 0px  !important;
+}
+.content{
+    background-color: #f1f2f3;
+    height: 100%;
+}

@@ -2,19 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/adminIndex.css') }}">
     <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     {% block configCss %}
-        {# csska #}
+        {# csska podstranek #}
     {% endblock %}
 </head>
 <body>
-<div id="content">
-    {% block body %}{% endblock %}
+<style>
+
+</style>
+<div class="row" style="margin: 0px;">
+    <div class="adminMenu col-sm-2" >
+        adminMenu
+    </div>
+    <div class="col-sm-10 contentPackage" >
+            <div class="col-sm-12 contentMenu">
+                contentMenu
+            </div>
+
+
+            <div class="col-sm-12 content" >
+                {% block body %}{% endblock %}
+            </div>
+
+    </div>
 </div>
+
 
 {% block configJs %} {% endblock %}
 
