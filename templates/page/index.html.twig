@@ -3,15 +3,22 @@
 
 {% block configCss %}
     {# csska #}
-
-
 {% endblock %}
 
 {% block body %}
     {% include 'alert.html.twig' %}
-
-
     {# Obsah #}
+
+    <div class="container">
+        <div class="row">
+            {{ controller_name }}
+        </div>
+        {# ukazkova cesta #}
+        <div class="row">
+            <a href="{{ path('admin') }}"> AdminController</a>
+        </div>
+    </div>
+
 
 
     {# Konec obsahu #}

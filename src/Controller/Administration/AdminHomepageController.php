@@ -18,7 +18,7 @@ class AdminHomepageController extends AbstractController
         $this->addFlash("info", "This is an notice message");
 
         return $this->render('administration/index.html.twig', [
-            'message' => 'Welcome to your new controller!'
+            'controller_name' => 'AdminHomepageController'
         ]);
     }
 }

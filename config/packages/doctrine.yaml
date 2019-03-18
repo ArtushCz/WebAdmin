@@ -3,9 +3,8 @@ parameters:
     # This allows you to run cache:warmup even if your
     # environment variables are not available yet.
     # You should not need to change this value.
-    env(DATABASE_URL): 'mysql://w207020_wadmin:@md17.wedos.net:3306/d207020_wadmin'
-    database_user: w207020_wadmin
-    database_password: WebAd-1992
+    #env(DATABASE_URL): 'mysql://w207020_wadmin:@md17.wedos.net:3306/d207020_wadmin'
+
 
 doctrine:
     dbal:

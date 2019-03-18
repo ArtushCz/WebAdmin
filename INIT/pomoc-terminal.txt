@@ -1,13 +1,16 @@
+Git: https://git-scm.com/downloads
+Composer: https://getcomposer.org/download/   (Download and run Composer-Setup.exe)
+PHPStorm: https://www.jetbrains.com/phpstorm/specials/phpstorm/phpstorm.html?gclid=EAIaIQobChMIl_nRxJKL4QIViud3Ch3uNAJOEAAYASAAEgL3XvD_BwE&gclsrc=aw.ds
+GitHub: https://github.com/ArtushCz/WebAdmin.git
+
+
+
 --dotahnuti entit z DB
 php bin/console doctrine:mapping:import "App\Entity" annotation --path=src/Entity
 php bin/console make:entity --regenerate App
 
 
-
-php bin/console list make
-
---vytvoreni controlleru
-
+dotazy terminálu:
  php bin/console make:auth                   Creates a Guard authenticator of different flavors
  php bin/console make:command                Creates a new console command class
  php bin/console make:controller             Creates a new controller class
@@ -28,6 +31,7 @@ php bin/console list make
  php bin/console make:voter                  Creates a new security voter class
 
 
+
 --Apache settings : httpd-vhosts.conf
 <VirtualHost *:80>
     DocumentRoot E:/xampp/htdocs/WebAdmin/public -- cesta ke slozce public
@@ -39,3 +43,7 @@ php bin/console list make
 	FallbackResource /index.php
     </Directory>
 </VirtualHost>
+
+
+
+
