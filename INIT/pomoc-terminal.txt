@@ -47,3 +47,8 @@ dotazy terminálu:
 
 
 
+/**
+ * Require ROLE_ADMIN for *every* controller method in this class.
+ *
+ * @IsGranted("ROLE_ADMIN")
+ */

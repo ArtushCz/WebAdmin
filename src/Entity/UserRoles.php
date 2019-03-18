@@ -41,6 +41,11 @@ class UserRoles
      */
     private $urR;
 
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
     public function getUrId(): ?int
     {
         return $this->urId;
