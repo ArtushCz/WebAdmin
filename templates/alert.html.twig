@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-sm-1" style="top: 3px; right: 15px;">
                     <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
-                                class="fa fa-remove"></span></a>
+                                class="fas fa-times"></span></a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-sm-1" style="top: 3px; right: 15px;">
                     <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
-                                class="fa fa-remove"></span></a>
+                                class="fas fa-times"></span></a>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-sm-1" style="top: 3px; right: 15px;">
                     <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
-                                class="fa fa-remove"></span></a>
+                                class="fas fa-times"></span></a>
                 </div>
             </div>
         </div>
@@ -57,24 +57,13 @@
                 </div>
                 <div class="col-sm-1" style="top: 3px; right: 15px;">
                     <a href="#" class="alert-btn" onclick="alertBtn({{ messageCounter }})"><span
-                                class="fa fa-remove"></span></a>
+                                class="fas fa-times"></span></a>
                 </div>
             </div>
         </div>
     {% endfor %}
 </div>
-{% if messageCounter > 0  %}
-<div class="alert-window">
-    <div class="alert-window-btn">
-        <a href="#" class="alert-btn" onclick="showAlerts()"><span
-                    class="fa fa-exclamation-triangle"></span></a>
-        <div class="alert-window-notify">
-            {{ messageCounter }}
-        </div>
-    </div>
 
-</div>
-{% endif %}
 
 <script>
     function alertBtn(id){
