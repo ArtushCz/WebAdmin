@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GalleryFolderRelation
  *
- * @ORM\Table(name="gallery_folder_relation", indexes={@ORM\Index(name="GALLERY_FOLDER_RELATION_fk0", columns={"GFR_PARENT"}), @ORM\Index(name="GALLERY_FOLDER_RELATION_fk1", columns={"GFR_CHILD"})})
+ * @ORM\Table(name="gallery_folder_relation", indexes={@ORM\Index(name="GALLERY_FOLDER_RELATION_fk1", columns={"GFR_CHILD"}), @ORM\Index(name="GALLERY_FOLDER_RELATION_fk0", columns={"GFR_PARENT"})})
  * @ORM\Entity
  */
 class GalleryFolderRelation

@@ -19,7 +19,9 @@
 <div class="row" style="margin: 0px;">
 
     <div class="adminMenu col-sm-2 hmenu">
-        adminMenu
+        {% for menu_item in menuItems %}
+            {{ menu_item.miName }} <br/>
+        {% endfor %}
     </div>
     <div class="col-sm-10 contentPackage hmenu">
         <div class="col-sm-12 contentMenu ">

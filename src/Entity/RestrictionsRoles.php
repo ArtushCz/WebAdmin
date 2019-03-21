@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * RestrictionsRoles
  *
- * @ORM\Table(name="restrictions_roles", uniqueConstraints={@ORM\UniqueConstraint(name="R_ID", columns={"R_ID"})}, indexes={@ORM\Index(name="RESTRICTIONS_ROLES_fk0", columns={"RI_ID"})})
+ * @ORM\Table(name="restrictions_roles", uniqueConstraints={@ORM\UniqueConstraint(name="RR_ID", columns={"RR_ID"})}, indexes={@ORM\Index(name="RESTRICTIONS_ROLES_fk0", columns={"RR_MC_ID"})})
  * @ORM\Entity
  */
 class RestrictionsRoles
@@ -15,35 +15,54 @@ class RestrictionsRoles
     /**
      * @var int
      *
-     * @ORM\Column(name="R_ID", type="integer", nullable=false)
+     * @ORM\Column(name="RR_ID", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $rId;
+    private $rrId;
 
     /**
-     * @var \RestrictionRoleItems
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="RestrictionRoleItems")
+     * @ORM\Column(name="RR_NAME", type="string", length=255, nullable=false)
+     */
+    private $rrName;
+
+    /**
+     * @var \MenuCollection
+     *
+     * @ORM\ManyToOne(targetEntity="MenuCollection")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="RI_ID", referencedColumnName="RI_ID")
+     *   @ORM\JoinColumn(name="RR_MC_ID", referencedColumnName="MC_ID")
      * })
      */
-    private $ri;
+    private $rrMc;
 
-    public function getRId(): ?int
+    public function getRrId(): ?int
     {
-        return $this->rId;
+        return $this->rrId;
     }
 
-    public function getRi(): ?RestrictionRoleItems
+    public function getRrName(): ?string
     {
-        return $this->ri;
+        return $this->rrName;
     }
 
-    public function setRi(?RestrictionRoleItems $ri): self
+    public function setRrName(string $rrName): self
     {
-        $this->ri = $ri;
+        $this->rrName = $rrName;
+
+        return $this;
+    }
+
+    public function getRrMc(): ?MenuCollection
+    {
+        return $this->rrMc;
+    }
+
+    public function setRrMc(?MenuCollection $rrMc): self
+    {
+        $this->rrMc = $rrMc;
 
         return $this;
     }

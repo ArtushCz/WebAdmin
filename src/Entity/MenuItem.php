@@ -3,13 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use App\Entity\MenuCollection;
 /**
  * MenuItem
  *
- * @ORM\Table(name="menu_item", indexes={@ORM\Index(name="MENU_ITEM_fk2", columns={"MI_PAGE_ID"}), @ORM\Index(name="MENU_ITEM_fk0", columns={"MI_MC_ID"}), @ORM\Index(name="MENU_ITEM_fk1", columns={"MI_RESTRICTION_ID"})})
- * @ORM\Entity
+ * @ORM\Table(name="menu_item", indexes={@ORM\Index(name="MENU_ITEM_fk2", columns={"MI_PAGE_ID"}), @ORM\Index(name="MENU_ITEM_fk0", columns={"MI_MC_ID"})})
+ * @ORM\Entity(repositoryClass="App\Repository\MenuItemRepository")
  */
+
 class MenuItem
 {
     /**
@@ -44,16 +45,6 @@ class MenuItem
      * })
      */
     private $miMc;
-
-    /**
-     * @var \RestrictionsRoles
-     *
-     * @ORM\ManyToOne(targetEntity="RestrictionsRoles")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="MI_RESTRICTION_ID", referencedColumnName="R_ID")
-     * })
-     */
-    private $miRestriction;
 
     /**
      * @var \Page
@@ -102,18 +93,6 @@ class MenuItem
     public function setMiMc(?MenuCollection $miMc): self
     {
         $this->miMc = $miMc;
-
-        return $this;
-    }
-
-    public function getMiRestriction(): ?RestrictionsRoles
-    {
-        return $this->miRestriction;
-    }
-
-    public function setMiRestriction(?RestrictionsRoles $miRestriction): self
-    {
-        $this->miRestriction = $miRestriction;
 
         return $this;
     }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PageArticle
  *
- * @ORM\Table(name="page_article", indexes={@ORM\Index(name="PAGE_ARTICLE_fk0", columns={"PA_P_ID"}), @ORM\Index(name="PAGE_ARTICLE_fk1", columns={"PA_SYS_UPDATE_BY"})})
+ * @ORM\Table(name="page_article", indexes={@ORM\Index(name="PAGE_ARTICLE_fk1", columns={"PA_SYS_UPDATE_BY"}), @ORM\Index(name="PAGE_ARTICLE_fk0", columns={"PA_P_ID"})})
  * @ORM\Entity
  */
 class PageArticle

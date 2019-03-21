@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserRoles
  *
- * @ORM\Table(name="user_roles", indexes={@ORM\Index(name="USER_ROLES_fk0", columns={"UR_U_ID"}), @ORM\Index(name="USER_ROLES_fk1", columns={"UR_R_ID"})})
+ * @ORM\Table(name="user_roles", indexes={@ORM\Index(name="USER_ROLES_fk1", columns={"UR_R_ID"}), @ORM\Index(name="USER_ROLES_fk0", columns={"UR_U_ID"})})
  * @ORM\Entity
  */
 class UserRoles
@@ -40,11 +40,6 @@ class UserRoles
      * })
      */
     private $urR;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
 
     public function getUrId(): ?int
     {

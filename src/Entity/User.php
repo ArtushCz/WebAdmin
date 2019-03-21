@@ -13,10 +13,14 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity
  * @UniqueEntity(fields={"uLogin"}, message="There is already an account with this uLogin")
  */
- class User implements UserInterface
+class User implements UserInterface
 {
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
 
-     /**
+    /**
      * @var int
      *
      * @ORM\Column(name="U_ID", type="integer", nullable=false)
@@ -90,92 +94,27 @@ use Symfony\Component\Security\Core\User\UserInterface;
         return $this;
     }
 
-     /**
-      * @var Třída UserRoles
-      */
-     private $roles;
-     /**
-      * @var třída userAddress
-      */
-     private $address;
-     /**
-      * @var třída UserContact
-      */
-     private $contact;
 
-     /**
-      * @return mixed
-      */
-     public function getAddress()
-     {
-         return $this->address;
-     }
-
-     /**
-      * @param mixed $address
-      */
-     public function setAddress($address): void
-     {
-         $this->address = $address;
-     }
-
-     /**
-      * @return mixed
-      */
-     public function getContact()
-     {
-         return $this->contact;
-     }
-
-     /**
-      * @param mixed $contact
-      */
-     public function setContact($contact): void
-     {
-         $this->contact = $contact;
-     }
-
-
-
-    /**
-     * @return mixed
-     */
-    public function getRoles(): array
+    public function getPassword()
     {
-        $roles = $this->roles;
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
+        return $this->uPassword;
     }
 
-    /**
-     * @param mixed $roles
-     */
-    public function setRoles($roles): void
+    public function getSalt()
     {
-        $this->roles = $roles;
+        // TODO: Implement getSalt() method.
     }
 
-     public function getPassword()
-     {
-         return $this->uPassword;
-     }
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
 
-     public function getSalt()
-     {
-         // TODO: Implement getSalt() method.
-     }
-
-     public function getUsername()
-     {
-         // TODO: Implement getUsername() method.
-     }
-
-     public function eraseCredentials()
-     {
-         // TODO: Implement eraseCredentials() method.
-     }
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
 
 
 
- }
+}
